@@ -1,24 +1,24 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Carousel from "../Components/Carousel";
+import List from "../Components/ProductCardList/List";
+import { GlobalStyles } from "../Constants/Styles";
 
-
-function HomeScreen(){
-    return(<>
-    <Carousel />
-  { /* <View style={Styles.container} >
-        <Text>HomeScreen page</Text>
-    </View>*/}
-    </>)
+function HomeScreen() {
+  return (<>
+  <View style={styles.container}>
+      <Carousel />
+      <List />
+    </View>
+  </>
+    
+  );
 }
 
 export default HomeScreen;
 
-const Styles = StyleSheet.create({
-    container:{
-        flex:1,
-        alignItems:'center',
-        justifyContent:'center',
-        textAlign:'center'
-    }
-}
-)
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor:GlobalStyles.colors.light_blue
+  },
+});

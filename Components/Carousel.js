@@ -1,7 +1,8 @@
 import { FlatList, Image, StyleSheet, View, Dimensions } from "react-native";
 import { useState } from "react";
 import { DATA } from "../Dummy_Data/Data";
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductCardList/ProductCard";
+import { GlobalStyles } from "../Constants/Styles";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
@@ -56,7 +57,6 @@ function Carousel() {
               />
             ))}
           </View>
-            <ProductCard />
         </View>
         
       )}
@@ -69,10 +69,12 @@ export default Carousel;
 const styles = StyleSheet.create({
   container: {
     marginBottom: 30,
+     marginRight: 12,
+     marginLeft:12
   },
 
   horizontalImage: {
-    width: SCREEN_WIDTH,
+    width: SCREEN_WIDTH-23,
     height: 230,
     resizeMode: "cover",
   },
@@ -98,12 +100,15 @@ const styles = StyleSheet.create({
   grid: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingHorizontal: 16,
+    //paddingHorizontal: 1 ,
+    
   },
 
   gridImage: {
-    width: "48%",
-    height: 140,
+   // width: "48%",
+    //height: 140,
     borderRadius: 12,
+    borderColor:GlobalStyles.colors.dark_purple,
+    borderWidth:2
   },
 });

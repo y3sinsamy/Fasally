@@ -1,81 +1,83 @@
+// Components/ProductCardList/ProductCard.js
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import Rating from "../Rating";
+import { GlobalStyles } from "../../Constants/Styles";
 
-function ProductCard() {
+const CARD_WIDTH = 200;
+
+function ProductCard({ image, index, total }) {
   return (
     <View style={styles.card}>
       
-      {/* Image */}
       <View style={styles.imageContainer}>
-        <Image
-          source={{ uri: "https://images.unsplash.com/photo-1582582621959-48d27397dc69" }}
-          style={styles.image}
-        />
-        <Text style={styles.imageCounter}>1/12</Text>
+        <Image source={image.img} style={styles.image} />
+        <Text style={styles.imageCounter}>
+          {index + 1}/{total}
+        </Text>
       </View>
 
-      {/* Title */}
       <Text style={styles.title} numberOfLines={2}>
         Velvet fabric with floral patterns for designs t...
       </Text>
 
-      {/* Colors */}
       <View style={styles.colorsContainer}>
-        <View style={[styles.colorDot, { backgroundColor: "#7b2cbf" }]} />
-        <View style={[styles.colorDot, { backgroundColor: "#e63946" }]} />
-        <View style={[styles.colorDot, { backgroundColor: "#1d3557" }]} />
+        <View style={[styles.colorDot, { backgroundColor: "#840F20" }]} />
+        <View style={[styles.colorDot, { backgroundColor: "#2E1FFF" }]} />
+        <View style={[styles.colorDot, { backgroundColor: "#00882D" }]} />
       </View>
 
-      {/* Price */}
-      <View style={styles.priceContainer}>
+<View style={styles.PriceAndActions}>
+
+       <View style={styles.priceContainer}>
+
         <Text style={styles.price}>219.99 EGP/m</Text>
         <Text style={styles.oldPrice}>248.00 EGP/m</Text>
+        
       </View>
+      <View style={styles.actions}>
+          <Pressable>
+            <Ionicons name="heart-outline" size={20} color='#fff' />
+          </Pressable>
+          <Pressable style={styles.actionButton}>
+            <Ionicons name="cart-outline" size={20} color="#fff" />
+          </Pressable>
+      </View>
+</View>
+     
 
-      {/* Rating + Actions */}
       <View style={styles.footer}>
-        <View style={styles.rating}>
-          <Ionicons name="star" size={14} color="#f4a261" />
-          <Ionicons name="star" size={14} color="#f4a261" />
-          <Ionicons name="star" size={14} color="#f4a261" />
-          <Ionicons name="star" size={14} color="#f4a261" />
-          <Ionicons name="star-outline" size={14} color="#f4a261" />
-          <Text style={styles.ratingText}>(57)</Text>
-        </View>
+        <Rating rating={4} />
 
-        <View style={styles.actions}>
-          <Pressable>
-            <Ionicons name="heart-outline" size={20} color="#7b2cbf" />
-          </Pressable>
-          <Pressable>
-            <Ionicons name="cart-outline" size={20} color="#7b2cbf" />
-          </Pressable>
-        </View>
+        
       </View>
-
     </View>
   );
 }
 
 export default ProductCard;
+
 const styles = StyleSheet.create({
   card: {
     backgroundColor: "#fff",
     borderRadius: 12,
     padding: 10,
-    width: 200,
+    width: CARD_WIDTH+11,
     elevation: 4,
+    marginRight: 12, // ✅ مسافة بين الكروت
+    
   },
   imageContainer: {
+    width: CARD_WIDTH ,
     position: "relative",
   },
   image: {
-    width: "100%",
+    width: "95%",
     height: 120,
     borderRadius: 10,
   },
   imageCounter: {
-    position: "absolute",
+    position: 'absolute',
     right: 6,
     bottom: 6,
     backgroundColor: "rgba(0,0,0,0.6)",
@@ -100,8 +102,9 @@ const styles = StyleSheet.create({
     marginRight: 6,
   },
   priceContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'column',
+    backgroundColor:'rgba(f, f, f, 1)',
+   
   },
   price: {
     fontWeight: "bold",
@@ -113,23 +116,25 @@ const styles = StyleSheet.create({
     color: "gray",
     textDecorationLine: "line-through",
   },
+  PriceAndActions:{
+    flexDirection:'row',
+    justifyContent:'space-around',
+    alignItems:'center'
+  },
   footer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     marginTop: 6,
   },
-  rating: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  ratingText: {
-    fontSize: 11,
-    marginLeft: 4,
-    color: "gray",
-  },
   actions: {
     flexDirection: "row",
-    gap: 10,
+    backgroundColor:GlobalStyles.colors.dark_purple,
+    borderRadius:5,
+    padding:6
+
+  },
+  actionButton: {
+    marginLeft: 10,
   },
 });

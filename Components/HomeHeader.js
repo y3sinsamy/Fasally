@@ -12,8 +12,10 @@ export default function HomeHeader() {
       {/* LEFT ICONS */}
       <View style={styles.left}>
         <Pressable style={styles.iconCircle}>
-            <FasallyUser width={40} height={40} color= {GlobalStyles.colors.dark_purple} />
-         </Pressable>
+          <View  style={styles.borders}>
+          <FasallyUser width={40} height={40} color= {GlobalStyles.colors.dark_purple} />
+          </View>
+           </Pressable>
 
         <View style={styles.notificationWrapper}>
           <Pressable style={styles.iconCircle}>
@@ -44,11 +46,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor:GlobalStyles.colors.light_blue,
     paddingHorizontal: 16,
-    paddingTop: 65,
+    paddingTop: '8%',
     paddingBottom: 5,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
   },
+  borders:{
+    borderRadius:20,
+    borderColor:GlobalStyles.colors.dark_purple,
+    borderWidth:1
+  },
+
   left: {
     flexDirection: 'row',
     alignItems: 'center',
