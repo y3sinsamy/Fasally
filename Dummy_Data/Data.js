@@ -14,6 +14,7 @@ export const DATA = [
       { id: 'c1', img: require('../assets/ADVs/fabric_img.png') },
       { id: 'c2', img: require('../assets/ADVs/fabric_img2.png') },
       { id: 'c3', img: require('../assets/ADVs/one.png') },
+      { id: 'c4', img: require('../assets/ADVs/one.png') },
     ],
   },
 ];

@@ -34,7 +34,7 @@ export default function App() {
   <BottomTab.Screen name="HomeScreen" component={HomeScreen}
    options={{
     title: 'Home Screen',
-    tabBarLabel: 'Home',//بتعرض اسم الشاشة تحت عند التابس
+    tabBarLabel: 'Home',
     tabBarIcon: ({ size, color }) => (
   <Ionicons name='home' size={size} color={color} />
 )}}/>
@@ -69,7 +69,7 @@ export default function App() {
        
    <View style={styles.badge}>
                <Text style={styles.badgeText}>+9</Text>
-             </View>
+    </View>
   </>
       
   );

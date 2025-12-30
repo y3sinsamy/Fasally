@@ -1,5 +1,5 @@
 import { DATA } from "../../Dummy_Data/Data";
-import { FlatList } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import ProductCard from "./ProductCard";
 function List() {
   const images = DATA[0]?.cardImages ?? [];
@@ -19,9 +19,11 @@ function List() {
           image={item}
           index={index}
           total={images.length}
+  
         />
       )}
     />
   );
 }
 export default List;
+

@@ -68,7 +68,7 @@ function Rating({ maxStars = 5 }) {
                 // لو رقم النجمة أقل أو يساوي rating → نجمة متلونة
                 // غير كده → نجمة فاضية
                 name={starNumber <= rating ? "star" : "star-outline"}
-                size={28}        
+                size={24}        
                 color="gold"     
               />
             </Pressable>

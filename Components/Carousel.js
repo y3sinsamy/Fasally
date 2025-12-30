@@ -4,7 +4,7 @@ import { DATA } from "../Dummy_Data/Data";
 import ProductCard from "./ProductCardList/ProductCard";
 import { GlobalStyles } from "../Constants/Styles";
 
-const SCREEN_WIDTH = Dimensions.get("window").width;
+
 
 function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -46,17 +46,6 @@ function Carousel() {
               />
             ))}
           </View>
-
-          {/* ---------- Grid Images ---------- */}
-          <View style={styles.grid}>
-            {item.gridImages.map((img) => (
-              <Image
-                key={img.id}
-                source={img.img}
-                style={styles.gridImage}
-              />
-            ))}
-          </View>
         </View>
         
       )}
@@ -65,18 +54,17 @@ function Carousel() {
 }
 
 export default Carousel;
-
+const SCREEN_WIDTH = Dimensions.get("window").width;
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 30,
-     marginRight: 12,
-     marginLeft:12
+    marginBottom: 18,
   },
 
   horizontalImage: {
     width: SCREEN_WIDTH-23,
     height: 230,
     resizeMode: "cover",
+    borderRadius:12
   },
 
   dotsContainer: {
@@ -97,18 +85,4 @@ const styles = StyleSheet.create({
     backgroundColor: "#7b2cbf",
   },
 
-  grid: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    //paddingHorizontal: 1 ,
-    
-  },
-
-  gridImage: {
-   // width: "48%",
-    //height: 140,
-    borderRadius: 12,
-    borderColor:GlobalStyles.colors.dark_purple,
-    borderWidth:2
-  },
 });

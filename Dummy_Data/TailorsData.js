@@ -1,0 +1,38 @@
+export const TAILORS = [
+  {
+    id: 't1',
+    name: 'Essam Hamdy',
+    image: require('../assets/ADVs/Essam.png'),
+    description: 'An experienced tailor specialized in modern fashion design. Worked on many ex...',
+    tags: ['Luxury', 'Alter & Repairs'],
+    rating: 4,
+    reviews: 34,
+  },
+  {
+    id: 't2',
+    name: 'Abdo Sameh',
+    image: null,
+    description: 'My hobby is to repair old clothes, But sometimes i have designed female dresses.',
+    tags: ['Sewing', 'Fashion Design'],
+    rating: 3,
+    reviews: 7,
+  },
+  {
+    id: 't3',
+    name: 'Essam Hamdy',
+    image: 'https://i.pravatar.cc/150?img=12',
+    description: 'An experienced tailor specialized in modern fashion design. Worked on many ex...',
+    tags: ['Luxury', 'Alter & Repairs'],
+    rating: 4,
+    reviews: 34,
+  },
+  {
+    id: 't4',
+    name: 'Abdo Sameh',
+    image: null,
+    description: 'My hobby is to repair old clothes, But sometimes i have designed female dresses.',
+    tags: ['Sewing', 'Fashion Design'],
+    rating: 3,
+    reviews: 7,
+  },
+];
