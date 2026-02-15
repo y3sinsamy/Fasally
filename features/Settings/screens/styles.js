@@ -58,7 +58,7 @@ export default StyleSheet.create({
   },
 
   itemTitle: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: "600",
   },
 

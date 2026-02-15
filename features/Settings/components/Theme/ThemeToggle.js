@@ -10,6 +10,7 @@ export default function ThemeToggle({ selected = "light", onChange }) {
         overflow: "hidden",
         backgroundColor: "#C084FC",
         height: 36,
+        width: 100, // 👈 ده اللي كان ناقص
       }}
     >
       <Pressable

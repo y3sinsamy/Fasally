@@ -1,5 +1,6 @@
 import { View, Text, Pressable } from "react-native";
 import Arabicicon from "../../../../assets/Icons/Arabicicon.svg";
+
 export default function LanguageToggle({ selected = "en", onChange }) {
   return (
     <View
@@ -9,6 +10,7 @@ export default function LanguageToggle({ selected = "en", onChange }) {
         overflow: "hidden",
         backgroundColor: "#C084FC",
         height: 36,
+        width: 100, // 👈 ده اللي كان ناقص
       }}
     >
       <Pressable
